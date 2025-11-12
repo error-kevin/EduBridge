@@ -1,0 +1,96 @@
+/* Container styles */
+.features-container {
+    min-height: 100vh;
+    background-color: #f9fafb; /* Light gray */
+    padding: 8rem 2rem 0; /* Padding on top */
+}
+
+/* Page Header */
+.features-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.features-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1f2937; /* Dark gray */
+    margin-bottom: 1rem;
+}
+
+.features-header p {
+    font-size: 1.125rem; /* Larger text */
+    color: #4b5563; /* Medium gray */
+    max-width: 48rem; /* Limit max width */
+    margin-left: auto;
+    margin-right: auto; /* Center the paragraph */
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Default to 1 column */
+    gap: 2.5rem; /* Space between cards */
+    max-width: 90rem; /* Max width for grid */
+    margin-left: auto;
+    margin-right: auto; /* Center grid */
+}
+
+@media (min-width: 768px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+    }
+}
+
+/* Card styles */
+.feature-card {
+    background-color: #ffffff; /* White */
+    border-radius: 1rem; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 2rem; /* Inner padding */
+    transition: all 0.3s ease; /* Smooth transition */
+    position: relative;
+}
+
+.feature-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+    transform: translateY(-8px); /* Lift effect */
+}
+
+/* Icon styles */
+.feature-icon {
+    width: 5rem;
+    height: 5rem;
+    margin: 0 auto; /* Center icon */
+}
+
+/* Title styles */
+.feature-title {
+    font-size: 1.875rem; /* Heading size */
+    font-weight: 600; /* Semi-bold */
+    color: #1f2937; /* Dark gray */
+    margin: 1rem 0; /* Margin for spacing */
+}
+
+/* Description styles */
+.feature-description {
+    color: #374151; /* Dark gray */
+    font-size: 1.125rem; /* Text size */
+    margin-bottom: 2rem; /* Margin at bottom */
+}
+
+/* Button styles */
+.feature-button {
+    display: inline-block;
+    background-color: #4caf50; /* Green */
+    color: #ffffff; /* White */
+    font-weight: bold;
+    padding: 0.75rem 2rem; /* Padding */
+    border-radius: 0.5rem; /* Rounded corners */
+    font-size: 1.125rem; /* Larger font */
+    transition: background-color 0.3s ease; /* Transition for button */
+}
+
+.feature-button:hover {
+    background-color: #388e3c; /* Darker green on hover */
+}

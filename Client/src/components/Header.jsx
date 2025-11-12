@@ -42,15 +42,15 @@ const Header = () => {
       <nav className={menuOpen ? "open" : ""}>
         <ul>
           <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
-          <li><Link to="/Features" onClick={() => setMenuOpen(false)}>Features</Link></li>
-          <li><Link to="/Community" onClick={() => setMenuOpen(false)}>Community</Link></li>
-          <li><Link to="/Language" onClick={() => setMenuOpen(false)}>Language</Link></li>
+          <li><Link to="/features" onClick={() => setMenuOpen(false)}>Features</Link></li>
+          <li><Link to="/community" onClick={() => setMenuOpen(false)}>Community</Link></li>
+          <li><Link to="/language" onClick={() => setMenuOpen(false)}>Language</Link></li>
           
 
           {/* Show "Dashboard" only when user is logged in */}
           {user && (
             <React.Fragment>
-              <li><Link to="/Offline" onClick={() => setMenuOpen(false)}>Saved Offline</Link></li>
+              <li><Link to="/offline" onClick={() => setMenuOpen(false)}>Saved Offline</Link></li>
               <li><Link to="/dashboard" onClick={() => setMenuOpen(false)}>Dashboard</Link></li>
             </React.Fragment>
           )}
