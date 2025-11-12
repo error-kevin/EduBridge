@@ -28,7 +28,7 @@ const Home = () => {
       {/* Hero Section */}
       <header className="hero">
         <h1>Welcome to Edu-Bridge</h1>
-        <p>Smart Farming Made Easy with AI & Data</p>
+        <p>Your AI-Powered, Offline-Ready Study Buddy</p>
         <button 
           className="signup-button" 
           onClick={() => handleButtonClick("/dashboard")}
@@ -42,17 +42,17 @@ const Home = () => {
         <h2>Key Features</h2>
         <div className="features-container">
           <div className="feature-card" onClick={() => handleButtonClick("/weather")}>
-            <h3>🌤️ Weather & Soil Data</h3>
+            <h3>🌤️ Quiz</h3>
             <p>Get real-time weather & soil moisture data for your farm.</p>
           </div>
 
           <div className="feature-card" onClick={() => handleButtonClick("/pest-detection")}>
-            <h3>🔍 AI Pest Detection</h3>
+            <h3>🔍 Learn </h3>
             <p>Upload images to detect pests and get treatment suggestions.</p>
           </div>
 
           <div className="feature-card" onClick={() => handleButtonClick("/market-prices")}>
-            <h3>📊 Market Prices</h3>
+            <h3>📊 Community</h3>
             <p>Get the latest crop prices and market trends.</p>
           </div>
         </div>

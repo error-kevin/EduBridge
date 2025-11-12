@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Market = () => {
+const Quiz = () => {
   return (
     <div className="market-container">
       <h2>Market Prices</h2>
@@ -29,4 +29,4 @@ const Market = () => {
   );
 };
 
-export default Market;
+export default Quiz;

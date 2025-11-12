@@ -1,0 +1,20 @@
+{
+  "startNode": "q1",
+  "questions": {
+    "q1": {
+      "text": "What is 2 + 2?",
+      "options": ["3", "4", "5"],
+      "next": ["PROFILE_NEEDS_BASICS", "q2", "PROFILE_NEEDS_BASICS"]
+    },
+    "q2": {
+      "text": "What is 10 * 2?",
+      "options": ["12", "20", "200"],
+      "next": ["PROFILE_NEEDS_MULTIPLICATION", "q3", "PROFILE_NEEDS_MULTIPLICATION"]
+    },
+    "q3": {
+      "text": "What is 5 * (2 + 3)?",
+      "options": ["25", "15", "30"],
+      "next": ["PROFILE_ADVANCED", "PROFILE_NEEDS_ORDER_OF_OPS", "PROFILE_NEEDS_ORDER_OF_OPS"]
+    }
+  }
+}

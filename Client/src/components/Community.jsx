@@ -1,7 +1,7 @@
 // src/components/Weather.jsx
 import React from 'react';
 
-const Weather = () => {
+const Ask = () => {
   return (
     <div className="weather-container">
       <h2>Weather & Soil Data</h2>
@@ -16,4 +16,4 @@ const Weather = () => {
   );
 };
 
-export default Weather;
+export default Ask;

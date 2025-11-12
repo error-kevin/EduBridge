@@ -1,7 +1,7 @@
 // src/components/PestDetection.jsx
 import React from 'react';
 
-const PestDetection = () => {
+const Learn = () => {
   return (
     <div className="pest-detection-container">
       <h2>AI Pest Detection</h2>
@@ -16,4 +16,4 @@ const PestDetection = () => {
   );
 };
 
-export default PestDetection;
+export default Learn;
