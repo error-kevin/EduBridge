@@ -1,45 +1,27 @@
 import os
 import google.generativeai as genai
-from flask import Flask, request, jsonify
-from flask_cors import CORS
+from flask import Flask, jsonify
 from dotenv import load_dotenv
+from flask_cors import CORS
 
 load_dotenv()
-
 app = Flask(__name__)
 CORS(app)
 
 api_key = os.getenv("GEMINI_API_KEY")
+genai.configure(api_key=api_key)
 
-if not api_key:
-    print("❌ Error: API Key nahi mili! .env file check karein.")
-else:
-    genai.configure(api_key=api_key)
-    print("✅ Gemini AI Connected Successfully!")
+# ✅ Use the new model path
+model = genai.GenerativeModel("gemini-1.5-flash-latest")
 
-model = genai.GenerativeModel('gemini-1.5-flash')
-
-# --- YEH NAYA HAI (Home Page Route) ---
-@app.route('/')
-def home():
-    return "Server is running perfectly! 🚀 Ab React App se sawal puchiye."
-
-# --- AI Route ---
-@app.route('/ask', methods=['POST'])
-def ask_ai():
+@app.route("/test-ai")
+def test_ai():
     try:
-        data = request.get_json()
-        prompt = data.get('prompt')
-
-        if not prompt:
-            return jsonify({"answer": "Please ask a question."}), 400
-
-        response = model.generate_content(prompt)
-        return jsonify({"answer": response.text})
-
+        response = model.generate_content("Hello Gemini! Can you respond?")
+        return jsonify({"status": "✅ Working", "response": response.text})
     except Exception as e:
-        print(f"Server Error: {e}")
-        return jsonify({"answer": "Sorry, server error."}), 500
+        print("❌ Error while testing Gemini:", e)
+        return jsonify({"status": "❌ Failed", "error": str(e)})
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True, port=5000)
