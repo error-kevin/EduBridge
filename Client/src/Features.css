@@ -1,0 +1,26 @@
+.features-container {
+  background: linear-gradient(135deg, #e0f7fa, #ffffff) !important;
+  min-height: 100vh !important;
+  padding: 4rem 2rem !important;
+  transition: all 0.5s ease-in-out !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.35) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(12px) !important;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2) !important;
+  border-radius: 20px !important;
+  transition: all 0.3s ease !important;
+}
+
+.feature-card:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+}
+
+.feature-button:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25) !important;
+}
