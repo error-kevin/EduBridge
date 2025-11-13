@@ -6,18 +6,27 @@ const Learn = () => {
   const [answer, setAnswer] = useState("");
   const [loading, setLoading] = useState(false);
 
+  // Dummy questions and quick explanations
   const dummyQuestions = [
-    "What is Artificial Intelligence?",
-    "Explain Cloud Computing.",
-    "What is the Internet of Things?",
-    "Difference between Machine Learning and Deep Learning.",
-    "What is Blockchain Technology?"
+    { q: "What is Artificial Intelligence?", a: "AI is the simulation of human intelligence in machines." },
+    { q: "Explain Cloud Computing.", a: "Cloud computing provides computing services over the internet." },
+    { q: "What is the Internet of Things?", a: "IoT connects devices to the internet for data exchange." },
+    { q: "Difference between Machine Learning and Deep Learning.", a: "ML uses algorithms to learn from data, DL uses neural networks." },
+    { q: "What is Blockchain Technology?", a: "Blockchain is a distributed ledger technology for secure transactions." }
   ];
 
   const handleSearch = async (customQuery) => {
     const question = customQuery || query;
     if (!question.trim()) return;
 
+    // First, check if it’s in dummy questions for faster response
+    const dummy = dummyQuestions.find(item => item.q === question);
+    if (dummy) {
+      setAnswer(dummy.a);
+      return;
+    }
+
+    // Else, call API
     setLoading(true);
     setAnswer("");
     setQuery(question);
@@ -61,9 +70,9 @@ const Learn = () => {
         </div>
 
         <div className="suggestions">
-          {dummyQuestions.map((q, i) => (
-            <span key={i} onClick={() => handleSearch(q)}>
-              {q}
+          {dummyQuestions.map((item, i) => (
+            <span key={i} onClick={() => handleSearch(item.q)}>
+              {item.q}
             </span>
           ))}
         </div>
