@@ -4,11 +4,14 @@ import Header from './components/Header';
 import Home from './components/Home'; 
 import Auth from './components/auth';
 import Features from './components/Features';
-import Learn from './components/Learn'
-import Quiz from './components/Quiz'
+import Learn from './components/Learn';
+import Quiz from './components/Quiz';
 import CommunityPage from './components/Community';
 import Footer from './components/Footer'; 
 import ErrorBoundary from './ErrorBoundary'; 
+
+// ⭐ You MUST have this import
+import LanguagePage from './components/LanguagePage';
 
 const App = () => {
     return (
@@ -23,7 +26,10 @@ const App = () => {
                     <Route path="/features/learn" element={<Learn />} />
                     <Route path="/features/quiz" element={<Quiz />} />
                     <Route path="/community" element={<CommunityPage />} />
-                    <Route path="/" element={<Home />} />
+
+                    {/* ⭐ Language Page Route */}
+                    <Route path="/language" element={<LanguagePage />} />
+
                 </Routes>
               </ErrorBoundary>
             </main>
