@@ -1,5 +1,5 @@
 import React from "react";
-import "./Dashboard.css";
+import "../styles/Dashboard.css";   // ✅ FIXED CSS IMPORT PATH
 import { Link } from "react-router-dom";
 
 const Dashboard = () => {
@@ -11,34 +11,36 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container">
+
+      {/* SIDEBAR */}
       <div className="dashboard-sidebar">
-        <h2 className="dash-logo">Edu-Bridge</h2>
+        <h2 className="dash-logo">EduBridge</h2>
 
         <ul>
-          <li><Link to="/dashboard">🏠 Dashboard</Link></li>
+          <li><Link to="/dashboard">🏠 Dashboard Overview</Link></li>
           <li><Link to="/features/learn">📘 Start Learning</Link></li>
-          <li><Link to="/features/quiz">🎯 AI Quiz</Link></li>
-          <li><Link to="/language/tools">🌐 AI Language Tools</Link></li>
-          <li><Link to="/community">👥 Community</Link></li>
+          <li><Link to="/features/quiz">🎯 AI Quiz Zone</Link></li>
+          <li><Link to="/language/tools">🌐 Language Converter</Link></li>
+          <li><Link to="/community">👥 Community Hub</Link></li>
         </ul>
 
-        <button className="logout-btn" onClick={() => alert("Logout soon")}>
-          Logout
-        </button>
+        <button className="logout-btn">Sign Out</button>
       </div>
 
+      {/* MAIN CONTENT */}
       <div className="dashboard-main">
         <h1>Welcome, {user.name} 👋</h1>
-        <p>Email: {user.email}</p>
-        <p>Preferred Language: {user.preferredLanguage}</p>
+        <p><strong>Email:</strong> {user.email}</p>
+        <p><strong>Preferred Language:</strong> {user.preferredLanguage}</p>
 
         <div className="dash-cards">
           <div className="dash-card">📚 Continue Learning</div>
-          <div className="dash-card">✨ AI Recommendation</div>
-          <div className="dash-card">🎮 Play Quiz</div>
-          <div className="dash-card">🌐 AI Language Converter</div>
+          <div className="dash-card">✨ AI Recommendations</div>
+          <div className="dash-card">🎮 Take Quiz</div>
+          <div className="dash-card">🌍 Language Converter</div>
         </div>
       </div>
+
     </div>
   );
 };

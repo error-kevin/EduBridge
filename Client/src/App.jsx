@@ -1,18 +1,27 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+
 import ScrollToTop from './components/ScrollToTop';
-import Header from './components/Header'; 
-import Home from './components/Home'; 
+import Header from './components/Header';
+import Home from './components/Home';
 import Auth from './components/auth';
 import Profile from './components/profile';
 import Features from './components/Features';
 import Learn from './components/Learn';
 import Quiz from './components/Quiz';
+
+// ✅ Correct Community import (file name is Community.jsx)
 import CommunityPage from './components/CommunityPage/Community';
-import Footer from './components/Footer'; 
-import ErrorBoundary from './ErrorBoundary'; 
+
+import Footer from './components/Footer';
+import ErrorBoundary from './ErrorBoundary';
+
+// Language Pages
 import LanguagePage from './components/LanguagePage';
 import LanguageTools from './components/LanguageTools';
+
+// ⭐ Dashboard
+import Dashboard from './components/Dashboard';
 
 const App = () => {
     return (
@@ -24,7 +33,6 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Auth />} />
-                    <Route path="/profile" element={<Profile />} />
                     <Route path="/features" element={<Features />} />
                     <Route path="/features/learn" element={<Learn />} />
                     <Route path="/features/quiz" element={<Quiz />} />
@@ -32,12 +40,16 @@ const App = () => {
                     <Route path="/language" element={<LanguagePage />} />
                     <Route path="/language/tools" element={<LanguageTools />} />
 
-                </Routes>
-              </ErrorBoundary>
-            </main>
-            <Footer />
-        </div>
-    );
+            {/* Dashboard */}
+            <Route path="/dashboard" element={<Dashboard />} />
+
+          </Routes>
+        </ErrorBoundary>
+      </main>
+
+      <Footer />
+    </div>
+  );
 };
 
 export default App;
