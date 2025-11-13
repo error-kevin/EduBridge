@@ -1,18 +1,27 @@
 .dashboard-container {
   display: flex;
   min-height: 100vh;
-  background: #f4f8fc;
+  background: #f5f9ff;
+  font-family: "Segoe UI", sans-serif;
 }
 
-/* Sidebar */
+/* SIDEBAR */
 .dashboard-sidebar {
-  width: 240px;
+  width: 260px;
   background: #1a4b8a;
   color: white;
-  padding: 2rem 1rem;
+  padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.15);
+}
+
+.dash-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .dashboard-sidebar ul {
@@ -25,54 +34,85 @@
 }
 
 .dashboard-sidebar ul li a {
-  color: #e4ecf7;
+  display: block;
+  color: #d9e7ff;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.05rem;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  transition: 0.2s ease-in-out;
 }
 
 .dashboard-sidebar ul li a:hover {
+  background: rgba(255,255,255,0.2);
   color: white;
 }
 
-.dash-logo {
-  text-align: center;
-  margin-bottom: 2rem;
+/* LOGOUT */
+.logout-btn {
+  background: #ff4d4d;
+  border: none;
+  padding: 0.8rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-/* Main Dashboard Section */
+.logout-btn:hover {
+  background: #e64545;
+}
+
+/* MAIN */
 .dashboard-main {
   flex: 1;
-  padding: 2rem;
+  padding: 2.5rem;
 }
 
+.dash-welcome {
+  font-size: 2rem;
+  color: #1a4b8a;
+  margin-bottom: 0.5rem;
+}
+
+.user-details {
+  color: #4a5568;
+  margin-bottom: 1.8rem;
+}
+
+.user-details p {
+  margin: 4px 0;
+}
+
+/* CARDS */
 .dash-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.2rem;
 }
 
 .dash-card {
   background: white;
+  border-radius: 14px;
   padding: 1.5rem;
-  border-radius: 12px;
   text-align: center;
-  font-size: 1.1rem;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .dash-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
 }
 
-/* Logout */
-.logout-btn {
-  background: #ff5757;
-  border: none;
-  padding: 10px;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
+.dash-card h3 {
+  margin-top: 0.6rem;
+  color: #1a4b8a;
+}
+
+.dash-card p {
+  font-size: 0.9rem;
+  color: #4a5568;
 }
