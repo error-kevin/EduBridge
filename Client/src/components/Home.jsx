@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../firebase";  // Import Firebase auth
-import "./../styles/Home.css"; // Import CSS
+import { auth } from "../firebase";
+import "./../styles/Home.css";
+import LearningBoy from "../assets/Learning-cuate.svg";
 
 const Home = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
 
-  // Check if the user is logged in
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       setUser(currentUser);
@@ -16,46 +16,115 @@ const Home = () => {
   }, []);
 
   const handleButtonClick = (path) => {
-    if (user) {
-      navigate(path);  // Navigate to specified path if logged in
-    } else {
-      navigate("/auth");  // Navigate to authentication page if not logged in
-    }
+    if (user) navigate(path);
+    else navigate("/auth");
   };
 
   return (
-    <div className="home-container">
+    <div className="home">
       {/* Hero Section */}
-      <header className="hero">
-        <h1>Welcome to Edu-Bridge</h1>
-        <p>Your AI-Powered, Offline-Ready Study Buddy</p>
-        <button 
-          className="signup-button" 
-          onClick={() => handleButtonClick("/dashboard")}
-        >
-          {user ? "Get Started" : "Sign Up / Login"}
-        </button>
-      </header>
+      <section className="hero">
+        <div className="hero-content">
+          <h1>
+            Unlock Your Potential with <span>Edu-Bridge</span>
+          </h1>
+          <p>
+            Learn smarter, not harder — an AI-powered platform that bridges
+            knowledge, community, and technology.
+          </p>
+          <button
+            className="cta-btn"
+            onClick={() => handleButtonClick("/dashboard")}
+          >
+            {user ? "Go to Dashboard" : "Sign Up / Login"}
+          </button>
+        </div>
+        <div className="hero-visual">
+          <img
+            src={LearningBoy}
+            alt="Learning"
+          />
+        </div>
+      </section>
 
-      {/* Features Section */}
+      {/* Gradient Divider */}
+      <div className="divider"></div>
+
+      {/* Features */}
       <section className="features">
-        <h2>Key Features</h2>
-        <div className="features-container">
-          <div className="feature-card" onClick={() => handleButtonClick("/weather")}>
-            <h3>🌤️ Quiz</h3>
-            <p>Get real-time weather & soil moisture data for your farm.</p>
+        <h2>Explore What You Can Do</h2>
+        <div className="features-grid">
+          <div
+            className="feature-card"
+            onClick={() => handleButtonClick("/weather")}
+          >
+            <div className="icon">🧠</div>
+            <h3>AI-Powered Quizzes</h3>
+            <p>
+              Challenge yourself with smart quizzes that adapt to your
+              performance.
+            </p>
           </div>
-
-          <div className="feature-card" onClick={() => handleButtonClick("/pest-detection")}>
-            <h3>🔍 Learn </h3>
-            <p>Upload images to detect pests and get treatment suggestions.</p>
+          <div
+            className="feature-card"
+            onClick={() => handleButtonClick("/pest-detection")}
+          >
+            <div className="icon">📚</div>
+            <h3>Smart Learning</h3>
+            <p>
+              Personalized study recommendations with interactive materials.
+            </p>
           </div>
-
-          <div className="feature-card" onClick={() => handleButtonClick("/market-prices")}>
-            <h3>📊 Community</h3>
-            <p>Get the latest crop prices and market trends.</p>
+          <div
+            className="feature-card"
+            onClick={() => handleButtonClick("/market-prices")}
+          >
+            <div className="icon">💬</div>
+            <h3>Community</h3>
+            <p>
+              Connect with learners worldwide and grow together through
+              discussions.
+            </p>
           </div>
         </div>
+      </section>
+
+      {/* About */}
+      <section className="about">
+        <div className="about-text">
+          <h2>Empowering Learners Everywhere</h2>
+          <p>
+            Edu-Bridge brings together innovation, collaboration, and
+            accessibility to revolutionize how education works.
+          </p>
+          <ul>
+            <li>🌟 Personalized AI assistance</li>
+            <li>🌍 Offline-ready learning</li>
+            <li>🤝 Collaborative study spaces</li>
+            <li>⚡ Real-time progress tracking</li>
+          </ul>
+        </div>
+        <div className="about-image">
+          <img
+            src="https://cdn3d.iconscout.com/3d/premium/thumb/elearning-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--online-education-learning-course-pack-illustrations-4988633.png"
+            alt="About EduBridge"
+          />
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="cta-section">
+        <h2>Start Learning Today</h2>
+        <p>
+          Join thousands of learners making their journey easier with
+          Edu-Bridge.
+        </p>
+        <button
+          className="cta-main-btn"
+          onClick={() => handleButtonClick("/auth")}
+        >
+          {user ? "Go to Dashboard" : "Join Now"}
+        </button>
       </section>
     </div>
   );
