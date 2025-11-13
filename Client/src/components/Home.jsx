@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
 import "./../styles/Home.css";
 import LearningBoy from "../assets/Learning-cuate.svg";
+import AboutEdu from "../assets/Coding workshop-pana.svg"
 
 const Home = () => {
   const navigate = useNavigate();
@@ -56,7 +57,7 @@ const Home = () => {
         <div className="features-grid">
           <div
             className="feature-card"
-            onClick={() => handleButtonClick("/weather")}
+            onClick={() => handleButtonClick("/features/quiz")}
           >
             <div className="icon">🧠</div>
             <h3>AI-Powered Quizzes</h3>
@@ -67,7 +68,7 @@ const Home = () => {
           </div>
           <div
             className="feature-card"
-            onClick={() => handleButtonClick("/pest-detection")}
+            onClick={() => handleButtonClick("/features/learn")}
           >
             <div className="icon">📚</div>
             <h3>Smart Learning</h3>
@@ -77,7 +78,7 @@ const Home = () => {
           </div>
           <div
             className="feature-card"
-            onClick={() => handleButtonClick("/market-prices")}
+            onClick={() => handleButtonClick("/community")}
           >
             <div className="icon">💬</div>
             <h3>Community</h3>
@@ -86,6 +87,17 @@ const Home = () => {
               discussions.
             </p>
           </div>
+          <div
+            className="feature-card"
+            onClick={() => handleButtonClick("/language")}
+          >
+            <div className="icon">🌍</div>
+            <h3>Language Learning</h3>
+            <p>
+              Learn in your preferred language with AI-powered translation and
+              voice support.
+            </p>
+        </div>
         </div>
       </section>
 
@@ -106,7 +118,7 @@ const Home = () => {
         </div>
         <div className="about-image">
           <img
-            src="https://cdn3d.iconscout.com/3d/premium/thumb/elearning-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--online-education-learning-course-pack-illustrations-4988633.png"
+            src={AboutEdu}
             alt="About EduBridge"
           />
         </div>
