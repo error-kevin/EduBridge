@@ -1,76 +1,45 @@
-# Save as server/app.py
-import json
-from flask import Flask, jsonify, request
+import os
+import google.generativeai as genai
+from flask import Flask, request, jsonify
 from flask_cors import CORS
+from dotenv import load_dotenv
 
-# --- App Setup ---
+load_dotenv()
+
 app = Flask(__name__)
-# Allow your React app (running on http://localhost:5173) to make requests
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:5173"}})
+CORS(app)
 
-# --- Helper Functions (to load your "AI") ---
-def load_quiz_data():
-    with open('data/quiz.json', 'r') as f:
-        return json.load(f)
+api_key = os.getenv("GEMINI_API_KEY")
 
-def load_lesson_data():
-    with open('data/lessons.json', 'r') as f:
-        return json.load(f)
+if not api_key:
+    print("❌ Error: API Key nahi mili! .env file check karein.")
+else:
+    genai.configure(api_key=api_key)
+    print("✅ Gemini AI Connected Successfully!")
 
-# --- API Endpoints ---
+model = genai.GenerativeModel('gemini-1.5-flash')
 
-@app.route('/api/quiz/start', methods=['GET'])
-def start_quiz():
-    quiz_data = load_quiz_data()
-    start_question_id = quiz_data['startNode']
-    start_question = quiz_data['questions'][start_question_id]
-    return jsonify({
-        "questionId": start_question_id,
-        "questionText": start_question['text'],
-        "options": start_question['options']
-    })
+# --- YEH NAYA HAI (Home Page Route) ---
+@app.route('/')
+def home():
+    return "Server is running perfectly! 🚀 Ab React App se sawal puchiye."
 
-@app.route('/api/quiz/answer', methods=['POST'])
-def handle_answer():
-    data = request.json
-    question_id = data['questionId']
-    answer_index = data['answerIndex']
-    
-    quiz_data = load_quiz_data()
-    
+# --- AI Route ---
+@app.route('/ask', methods=['POST'])
+def ask_ai():
     try:
-        next_node = quiz_data['questions'][question_id]['next'][answer_index]
-        
-        if next_node.startswith('PROFILE_'):
-            profile_name = next_node.replace('PROFILE_', '')
-            return jsonify({
-                "isComplete": True,
-                "profile": profile_name
-            })
-        else:
-            next_question_id = next_node
-            next_question = quiz_data['questions'][next_question_id]
-            return jsonify({
-                "isComplete": False,
-                "questionId": next_question_id,
-                "questionText": next_question['text'],
-                "options": next_question['options']
-            })
-    except (KeyError, IndexError):
-        return jsonify({"error": "Invalid question or answer"}), 400
+        data = request.get_json()
+        prompt = data.get('prompt')
 
-@app.route('/api/lesson/<profile_name>', methods=['GET'])
-def get_lesson(profile_name):
-    lessons = load_lesson_data()
-    
-    if profile_name in lessons:
-        return jsonify(lessons[profile_name])
-    else:
-        # Fallback for a generic "advanced" profile
-        if "ADVANCED" in lessons:
-             return jsonify(lessons["ADVANCED"])
-        return jsonify({"error": "Profile not found"}), 404
+        if not prompt:
+            return jsonify({"answer": "Please ask a question."}), 400
 
-# --- Run the App ---
+        response = model.generate_content(prompt)
+        return jsonify({"answer": response.text})
+
+    except Exception as e:
+        print(f"Server Error: {e}")
+        return jsonify({"answer": "Sorry, server error."}), 500
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
