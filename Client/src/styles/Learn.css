@@ -1,0 +1,72 @@
+/* Theme based on your uploaded image */
+
+.learn-page {
+  background: linear-gradient(to bottom right, #e6f1ff, #ffffff);
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.learn-hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.learn-hero h1 {
+  font-size: 2.5rem;
+  color: #2a73cc;
+  margin-bottom: 10px;
+}
+
+.learn-hero p {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.course-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.course-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.course-card h2 {
+  color: #2a73cc;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.course-card p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.course-card button {
+  background-color: #2a73cc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.course-card button:hover {
+  background-color: #1b5eb7;
+}
