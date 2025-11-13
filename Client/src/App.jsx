@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import Header from './components/Header'; 
 import Home from './components/Home'; 
 import Auth from './components/auth';
@@ -9,16 +10,13 @@ import Quiz from './components/Quiz';
 import CommunityPage from './components/CommunityPage/Community';
 import Footer from './components/Footer'; 
 import ErrorBoundary from './ErrorBoundary'; 
-
-// Existing Language Page
 import LanguagePage from './components/LanguagePage';
-
-// ⭐ NEW: AI Language Tools Page
 import LanguageTools from './components/LanguageTools';
 
 const App = () => {
     return (
         <div>
+          <ScrollToTop />
             <Header />
             <main>
               <ErrorBoundary>
@@ -29,11 +27,7 @@ const App = () => {
                     <Route path="/features/learn" element={<Learn />} />
                     <Route path="/features/quiz" element={<Quiz />} />
                     <Route path="/community" element={<CommunityPage />} />
-
-                    {/* Language Settings Page */}
                     <Route path="/language" element={<LanguagePage />} />
-
-                    {/* ⭐ AI Language Converter Page */}
                     <Route path="/language/tools" element={<LanguageTools />} />
 
                 </Routes>
