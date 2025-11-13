@@ -11,15 +11,20 @@
 }
 
 .features-header h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #1f2937; /* Dark gray */
-    margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .features-header p {
     font-size: 1.125rem; /* Larger text */
-    color: #4b5563; /* Medium gray */
+    color: #000000; /* Medium gray */
     max-width: 48rem; /* Limit max width */
     margin-left: auto;
     margin-right: auto; /* Center the paragraph */
@@ -64,31 +69,39 @@
 
 /* Title styles */
 .feature-title {
-    font-size: 1.875rem; /* Heading size */
-    font-weight: 600; /* Semi-bold */
-    color: #1f2937; /* Dark gray */
-    margin: 1rem 0; /* Margin for spacing */
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 /* Description styles */
 .feature-description {
-    color: #374151; /* Dark gray */
+    color: #000000; /* Dark gray */
     font-size: 1.125rem; /* Text size */
     margin-bottom: 2rem; /* Margin at bottom */
 }
 
 /* Button styles */
 .feature-button {
-    display: inline-block;
-    background-color: #4caf50; /* Green */
-    color: #ffffff; /* White */
-    font-weight: bold;
-    padding: 0.75rem 2rem; /* Padding */
-    border-radius: 0.5rem; /* Rounded corners */
-    font-size: 1.125rem; /* Larger font */
-    transition: background-color 0.3s ease; /* Transition for button */
+  margin-top: 25px;
+  background: linear-gradient(135deg, #22d3ee, #3b82f6);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
 }
 
 .feature-button:hover {
-    background-color: #388e3c; /* Darker green on hover */
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #3b82f6, #22d3ee);
 }

@@ -1,5 +1,17 @@
 /* Profile.css */
 
+.unique-profile-page h2 {
+  font-size: 1.9rem;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
 .unique-profile-page {
   padding: 20px;
   text-align: center;
