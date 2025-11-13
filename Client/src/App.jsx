@@ -4,6 +4,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Header from './components/Header'; 
 import Home from './components/Home'; 
 import Auth from './components/auth';
+import Profile from './components/profile';
 import Features from './components/Features';
 import Learn from './components/Learn';
 import Quiz from './components/Quiz';
@@ -23,6 +24,7 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Auth />} />
+                    <Route path="/profile" element={<Profile />} />
                     <Route path="/features" element={<Features />} />
                     <Route path="/features/learn" element={<Learn />} />
                     <Route path="/features/quiz" element={<Quiz />} />

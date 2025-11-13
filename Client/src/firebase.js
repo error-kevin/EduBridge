@@ -32,5 +32,27 @@ const provider = new GoogleAuthProvider();
 const loginWithGoogle = () => signInWithPopup(auth, provider);
 const logoutUser = () => signOut(auth);
 
-export { app, auth, db, storage, loginWithGoogle, logoutUser };
+// 🔹 Optional helper to get a storage reference for profile images
+import { ref } from "firebase/storage";
+const getProfileImageRef = (userId) => ref(storage, `profileImages/${userId}`);
 
+// 🔹 Optional helper to handle CORS-friendly upload using Firebase SDK
+import { uploadBytes, getDownloadURL } from "firebase/storage";
+const uploadProfileImage = async (userId, file) => {
+  if (!userId || !file) throw new Error("Missing userId or file");
+  const imageRef = getProfileImageRef(userId);
+  await uploadBytes(imageRef, file);
+  const url = await getDownloadURL(imageRef);
+  return url; // Returns downloadable URL
+};
+
+export { 
+  app, 
+  auth, 
+  db, 
+  storage, 
+  loginWithGoogle, 
+  logoutUser, 
+  getProfileImageRef, 
+  uploadProfileImage 
+};
