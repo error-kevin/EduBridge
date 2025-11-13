@@ -103,25 +103,28 @@ npm run build
 ```
 EduBridge/
 │
-├── src/
-│   ├── components/
-│   │   ├── Navbar.jsx
-│   │   ├── Profile.jsx
-│   │   ├── Dashboard.jsx
-│   │   ├── Learn.jsx
-│   │   ├── AIChat.jsx
-│   │   └── Community.jsx
-│   ├── styles/
-│   │   ├── Profile.css
-│   │   ├── Dashboard.css
-│   │   └── Learn.css
-│   ├── firebase.js
-│   └── App.jsx
+├── client/
+│    ├── src/
+│    |    ├── components/
+│    |     │   
+│    |     ├── styles/
+│    |     │   
+│    |     ├── firebase.js
+│    |     └── App.jsx
+│    |
+|    ├── public/
+│    ├── manifest.json
+│    └── service-worker.js
 │
-├── public/
-│   ├── manifest.json
-│   └── service-worker.js
+│   
+│   
 │
+├── server/
+│      ├── app.py
+│      │   
+│      ├── requirement.txt
+│      │   
+│      ├── .env
 └── package.json
 ```
 
@@ -138,6 +141,5 @@ EduBridge/
 ---
 
 ## Developed By
-
-Team EduBridge
+Team : CODEX_SAARTHI 
 Making learning accessible, personalized, and inclusive for all.
