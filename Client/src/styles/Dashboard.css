@@ -1,20 +1,19 @@
+/* DASHBOARD LAYOUT */
 .dashboard-container {
   display: flex;
   min-height: 100vh;
-  background: #f5f9ff;
-  font-family: "Segoe UI", sans-serif;
+  background: #f6f9ff;
 }
 
 /* SIDEBAR */
 .dashboard-sidebar {
   width: 260px;
-  background: #1a4b8a;
+  background: #0d3b66;
+  padding: 2rem 1rem;
   color: white;
-  padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 2px 0 10px rgba(0,0,0,0.15);
 }
 
 .dash-logo {
@@ -26,93 +25,82 @@
 
 .dashboard-sidebar ul {
   list-style: none;
-  padding: 0;
+  padding-left: 0;
 }
 
 .dashboard-sidebar ul li {
-  margin: 1rem 0;
+  margin: 1.2rem 0;
 }
 
 .dashboard-sidebar ul li a {
-  display: block;
-  color: #d9e7ff;
-  text-decoration: none;
+  color: #dce8ff;
   font-size: 1.05rem;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
-  transition: 0.2s ease-in-out;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
 .dashboard-sidebar ul li a:hover {
-  background: rgba(255,255,255,0.2);
-  color: white;
+  color: #ffffff;
+  padding-left: 5px;
 }
 
-/* LOGOUT */
+/* LOGOUT BUTTON */
 .logout-btn {
   background: #ff4d4d;
   border: none;
-  padding: 0.8rem;
+  padding: 12px;
   color: white;
-  font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
-  transition: 0.2s;
+  font-size: 1rem;
+  transition: 0.3s;
 }
 
 .logout-btn:hover {
-  background: #e64545;
+  background: #e03b3b;
 }
 
-/* MAIN */
+/* MAIN SECTION */
 .dashboard-main {
   flex: 1;
   padding: 2.5rem;
 }
 
-.dash-welcome {
+.dashboard-main h1 {
   font-size: 2rem;
-  color: #1a4b8a;
-  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #0d3b66;
 }
 
-.user-details {
-  color: #4a5568;
-  margin-bottom: 1.8rem;
+.dashboard-main p {
+  font-size: 1.05rem;
+  margin: 5px 0;
+  color: #333;
 }
 
-.user-details p {
-  margin: 4px 0;
-}
-
-/* CARDS */
+/* DASHBOARD CARDS */
 .dash-cards {
+  margin-top: 2.5rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
 }
 
 .dash-card {
   background: white;
-  border-radius: 14px;
-  padding: 1.5rem;
+  padding: 1.8rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: 0.3s;
+  font-size: 1.1rem;
+  color: #0d3b66;
+  font-weight: 600;
 }
 
 .dash-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
-}
-
-.dash-card h3 {
-  margin-top: 0.6rem;
-  color: #1a4b8a;
-}
-
-.dash-card p {
-  font-size: 0.9rem;
-  color: #4a5568;
+  transform: translateY(-6px);
+  box-shadow: 0px 6px 18px rgba(0,0,0,0.15);
 }
