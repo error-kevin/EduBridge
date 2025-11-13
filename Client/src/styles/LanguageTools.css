@@ -1,0 +1,81 @@
+.tool-container {
+  background: linear-gradient(135deg, #f0fff4, #ebf8ff);
+  min-height: 100vh;
+  padding: 3rem;
+  text-align: center;
+}
+
+.tool-title {
+  font-size: 2.3rem;
+  color: #2b6cb0;
+  margin-bottom: 0.5rem;
+}
+
+.tool-subtext {
+  color: #4a5568;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tool-input {
+  width: 80%;
+  min-height: 140px;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 2px solid #d0dce5;
+  outline: none;
+  font-size: 1rem;
+  resize: vertical;
+  margin-bottom: 1.5rem;
+}
+
+.tool-lang-select {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.tool-lang-btn {
+  padding: 0.7rem 1.3rem;
+  border: none;
+  border-radius: 20px;
+  background: white;
+  color: #2b6cb0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+}
+
+.tool-lang-btn.active {
+  background: #2b6cb0;
+  color: white;
+}
+
+.tool-translate-btn {
+  background: #68d391;
+  color: white;
+  padding: 0.9rem 2rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.tool-translate-btn:hover {
+  background: #48bb71;
+}
+
+.tool-output-box {
+  margin-top: 2rem;
+  width: 80%;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+  text-align: left;
+  margin-inline: auto;
+}

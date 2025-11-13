@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "../styles/LanguagePage.css"; // We'll create this next
+import { Link } from "react-router-dom";   // ⭐ Added import
+import "../styles/LanguagePage.css";
 
 const LanguagePage = () => {
   const [selectedLang, setSelectedLang] = useState("English");
@@ -32,7 +33,7 @@ const LanguagePage = () => {
           { code: "EN", label: "English" },
           { code: "IN", label: "हिंदी" },
           { code: "IN", label: "தமிழ்" },
-          { code: "IN", label: "বাংলা" },
+          { code: "IN", label: "বাংলा" },
           { code: "IN", label: "मराठी" },
         ].map((lang, index) => (
           <button
@@ -59,6 +60,13 @@ const LanguagePage = () => {
           +A Font Size
         </button>
       </div>
+
+      {/* ⭐ AI Language Converter button */}
+      <Link to="/language/tools">
+        <button className="toggle-btn" style={{ marginTop: "15px" }}>
+          AI Language Converter ✨
+        </button>
+      </Link>
 
       <p className="selected-lang">
         🌍 Selected Language: <strong>{selectedLang}</strong>

@@ -10,8 +10,11 @@ import CommunityPage from './components/Community';
 import Footer from './components/Footer'; 
 import ErrorBoundary from './ErrorBoundary'; 
 
-// ⭐ You MUST have this import
+// Existing Language Page
 import LanguagePage from './components/LanguagePage';
+
+// ⭐ NEW: AI Language Tools Page
+import LanguageTools from './components/LanguageTools';
 
 const App = () => {
     return (
@@ -27,8 +30,11 @@ const App = () => {
                     <Route path="/features/quiz" element={<Quiz />} />
                     <Route path="/community" element={<CommunityPage />} />
 
-                    {/* ⭐ Language Page Route */}
+                    {/* Language Settings Page */}
                     <Route path="/language" element={<LanguagePage />} />
+
+                    {/* ⭐ AI Language Converter Page */}
+                    <Route path="/language/tools" element={<LanguageTools />} />
 
                 </Routes>
               </ErrorBoundary>
