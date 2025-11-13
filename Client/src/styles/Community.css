@@ -1,0 +1,150 @@
+/* --- Layout --- */
+.community-page {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafc;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Title --- */
+.community-page h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #1e1e1e;
+}
+
+/* --- User Info --- */
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.user-info img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid #007bff;
+  object-fit: cover;
+}
+
+.user-info span {
+  font-weight: 500;
+  color: #333;
+}
+
+.user-info button {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.user-info button:hover {
+  background-color: #e4e4e4;
+}
+
+/* --- Login Button --- */
+.login-btn {
+  display: block;
+  margin: 1rem auto;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #2f6fe0;
+}
+
+/* --- Search Bar --- */
+.search-bar {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.search-bar:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.2);
+}
+
+/* --- Post Form --- */
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+
+.post-form select,
+.post-form textarea,
+.post-form input[type="file"] {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.post-form textarea {
+  resize: none;
+  min-height: 90px;
+}
+
+.post-form select:focus,
+.post-form textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.2);
+}
+
+.post-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.post-form button:hover {
+  background-color: #005fcc;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 600px) {
+  .community-page {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .post-form button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .user-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

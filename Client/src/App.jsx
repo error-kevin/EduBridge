@@ -6,7 +6,7 @@ import Auth from './components/auth';
 import Features from './components/Features';
 import Learn from './components/Learn';
 import Quiz from './components/Quiz';
-import CommunityPage from './components/Community';
+import CommunityPage from './components/CommunityPage/Community';
 import Footer from './components/Footer'; 
 import ErrorBoundary from './ErrorBoundary'; 
 

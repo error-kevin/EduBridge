@@ -1,27 +1,36 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+// src/firebase.js
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Import Firebase SDK functions
+import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
+
+// ✅ Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAKvPw7l02pTXAoGF5eB_rVcATqgzKob8c",
   authDomain: "edu-bridge-learn.firebaseapp.com",
   projectId: "edu-bridge-learn",
-  storageBucket: "edu-bridge-learn.firebasestorage.app",
+  storageBucket: "edu-bridge-learn.appspot.com", // ✅ fixed: should end with .appspot.com
   messagingSenderId: "674146680703",
   appId: "1:674146680703:web:514ef4a307e5432955244a",
-  measurementId: "G-9GWNLNW99M"
+  measurementId: "G-9GWNLNW99M",
 };
-
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
+// Initialize services
 const auth = getAuth(app);
 const db = getFirestore(app);
-export { auth, db };
+const storage = getStorage(app);
+
+// Google Auth Provider
+const provider = new GoogleAuthProvider();
+
+// Helper functions for login/logout
+const loginWithGoogle = () => signInWithPopup(auth, provider);
+const logoutUser = () => signOut(auth);
+
+export { app, auth, db, storage, loginWithGoogle, logoutUser };
+
