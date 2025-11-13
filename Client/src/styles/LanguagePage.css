@@ -1,87 +1,95 @@
+/* MAIN CONTAINER */
 .language-container {
-  background: linear-gradient(135deg, #f0fff4, #ebf8ff);
   min-height: 100vh;
+  padding: 3rem 1rem;
   text-align: center;
-  padding: 4rem 2rem;
-  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #e8f1ff, #f3f7ff);
+  color: #1a4b8a;
 }
 
+/* TITLE */
 .language-title {
-  color: #2b6cb0;
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  color: #1a4b8a;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
 .language-subtext {
-  color: #4a5568;
-  font-size: 1.2rem;
+  color: #3b4d63;
   margin-bottom: 2rem;
+  font-size: 1.2rem;
 }
 
+/* LANGUAGE BUTTONS */
 .language-options {
   display: flex;
   justify-content: center;
+  gap: 1rem;
   flex-wrap: wrap;
-  gap: 1.2rem;
   margin-bottom: 2rem;
 }
 
 .language-btn {
-  background: white;
-  border: none;
   padding: 0.8rem 1.5rem;
+  background: white;
+  border: 2px solid #d4e2ff;
   border-radius: 25px;
+  font-size: 1rem;
   font-weight: 600;
-  color: #2b6cb0;
+  color: #1a4b8a;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.08);
 }
 
 .language-btn:hover {
-  transform: scale(1.1);
+  background: #e5efff;
+  transform: translateY(-3px);
 }
 
 .language-btn.active {
-  background: #2b6cb0;
+  background: #1a73e8;
   color: white;
+  border-color: #1a73e8;
 }
 
-.flag {
-  font-weight: bold;
-  margin-right: 0.5rem;
-  opacity: 0.8;
-}
-
+/* VOICE & FONT SIZE BUTTONS */
 .toggle-buttons {
   display: flex;
+  gap: 1rem;
   justify-content: center;
-  gap: 1.2rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
 
 .toggle-btn {
-  background: #68d391;
-  color: white;
+  background: #1a73e8;           /* BLUE */
   padding: 0.8rem 1.5rem;
   border-radius: 12px;
+  color: white;
+  font-size: 1rem;
   border: none;
-  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .toggle-btn:hover {
-  background: #48bb71;
+  background: #155fbe;          /* DARKER BLUE */
+  transform: translateY(-3px);
 }
 
-.toggle-btn.active {
-  background: #2b6cb0;
+/* AI Language Converter button */
+.toggle-btn.converter {
+  background: #1a73e8;
 }
 
+.toggle-btn.converter:hover {
+  background: #155fbe;
+}
+
+/* SELECTED LANGUAGE TEXT */
 .selected-lang {
+  color: #1a4b8a;
   margin-top: 1.5rem;
-  color: #2b6cb0;
   font-size: 1.1rem;
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";   // ⭐ Added import
+import { Link } from "react-router-dom";   
 import "../styles/LanguagePage.css";
 
 const LanguagePage = () => {
@@ -33,7 +33,7 @@ const LanguagePage = () => {
           { code: "EN", label: "English" },
           { code: "IN", label: "हिंदी" },
           { code: "IN", label: "தமிழ்" },
-          { code: "IN", label: "বাংলा" },
+          { code: "IN", label: "বাংলা" },
           { code: "IN", label: "मराठी" },
         ].map((lang, index) => (
           <button
@@ -61,9 +61,9 @@ const LanguagePage = () => {
         </button>
       </div>
 
-      {/* ⭐ AI Language Converter button */}
+      {/* ⭐ Updated AI Language Converter Button */}
       <Link to="/language/tools">
-        <button className="toggle-btn" style={{ marginTop: "15px" }}>
+        <button className="toggle-btn converter" style={{ marginTop: "15px" }}>
           AI Language Converter ✨
         </button>
       </Link>
