@@ -88,7 +88,7 @@ const Learn = () => {
               <div className="link-box">
                 <h4>📖 Study Resources</h4>
                 <a
-                  href={`https://www.google.com/search?q=${query}+study+material`}
+                  href={`https://www.google.com/search?q=${query}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -98,7 +98,7 @@ const Learn = () => {
               <div className="link-box">
                 <h4>🎥 Video Tutorials</h4>
                 <a
-                  href={`https://www.youtube.com/results?search_query=${query}+tutorial`}
+                  href={`https://www.youtube.com/results?search_query=${query}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

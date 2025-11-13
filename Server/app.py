@@ -1,27 +1,40 @@
-import os
-import google.generativeai as genai
-from flask import Flask, jsonify
-from dotenv import load_dotenv
+from flask import Flask, request, jsonify
 from flask_cors import CORS
+import openai
+import os
+from dotenv import load_dotenv
 
 load_dotenv()
+
 app = Flask(__name__)
 CORS(app)
 
-api_key = os.getenv("GEMINI_API_KEY")
-genai.configure(api_key=api_key)
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
-# ✅ Use the new model path
-model = genai.GenerativeModel("gemini-1.5-flash-latest")
+@app.route("/ask", methods=["POST"])
+def ask_ai():
+    data = request.get_json()
+    prompt = (data.get("prompt") or "").strip()
 
-@app.route("/test-ai")
-def test_ai():
+    if not prompt:
+        return jsonify({"answer": "Please enter a valid question."}), 400
+
     try:
-        response = model.generate_content("Hello Gemini! Can you respond?")
-        return jsonify({"status": "✅ Working", "response": response.text})
+        response = openai.chat.completions.create(
+            model="gpt-3.5-turbo",  # Free-tier friendly
+            messages=[
+                {"role": "system", "content": "You are an educational assistant who gives simple, clear explanations."},
+                {"role": "user", "content": prompt}
+            ],
+            max_tokens=200,
+            temperature=0.6,
+        )
+        answer = response.choices[0].message.content.strip()
+        return jsonify({"answer": answer})
+
     except Exception as e:
-        print("❌ Error while testing Gemini:", e)
-        return jsonify({"status": "❌ Failed", "error": str(e)})
+        print("Error:", e)
+        return jsonify({"answer": f"⚠️ Error: {str(e)}"}), 500
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(debug=True)
