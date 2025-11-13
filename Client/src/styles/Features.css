@@ -2,7 +2,6 @@
 .features-container {
     min-height: 100vh;
     background-color: #f9fafb; /* Light gray */
-    padding: 8rem 2rem 0; /* Padding on top */
 }
 
 /* Page Header */
@@ -47,7 +46,6 @@
     background-color: #ffffff; /* White */
     border-radius: 1rem; /* Rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    padding: 2rem; /* Inner padding */
     transition: all 0.3s ease; /* Smooth transition */
     position: relative;
 }

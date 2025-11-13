@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./LanguagePage.css"; // We'll create this next
+import "../styles/LanguagePage.css"; // We'll create this next
 
 const LanguagePage = () => {
   const [selectedLang, setSelectedLang] = useState("English");
@@ -29,7 +29,7 @@ const LanguagePage = () => {
 
       <div className="language-options">
         {[
-          { code: "GB", label: "English" },
+          { code: "EN", label: "English" },
           { code: "IN", label: "हिंदी" },
           { code: "IN", label: "தமிழ்" },
           { code: "IN", label: "বাংলা" },
